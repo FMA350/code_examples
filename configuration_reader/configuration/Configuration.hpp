@@ -6,13 +6,14 @@
  */
 
 #include <string>
+#include <ConfigurationFile.hpp>
 
-class Configuration : ConfigurationIO
+class Configuration : ConfigurationFile
 {
     private:
-
+        
     public:
-    std::string get(std::string parameterName);
-    bool set(std::string parameterName, std::string value);
+        std::string get(std::string parameterName);
+        bool set(std::string parameterName, std::string value);
 
 };

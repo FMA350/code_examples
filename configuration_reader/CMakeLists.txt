@@ -10,6 +10,16 @@ file(GLOB load_and_save_SRC
      "tests/load_and_save.cpp"
 )
 
+
+file(GLOB print_and_modify_SRC
+     "configuration_file/ConfigurationFile.cpp"  
+     "configuration_file/ConfigurationFile.hpp"
+     "parsers/ParserInterface.hpp"
+     "parsers/ParserInterface.hpp"
+     "tests/print_and_modify.cpp"
+)
+
+
 add_custom_target(load_and_save)
 add_executable(load_and_save_test ${load_and_save_SRC})
 add_dependencies(load_and_save load_and_save_test)
