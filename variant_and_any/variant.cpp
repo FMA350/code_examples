@@ -1,6 +1,29 @@
 #include <variant>
 #include <iostream>
 
+
+struct vA{
+
+    void who(){
+        std::cout << "I am variant A \n";
+    }
+};
+
+struct vB{
+
+    void who(){
+        std::cout << "I am variant B \n";
+    }
+};
+
+struct vC{
+
+    void who(){
+        std::cout << "I am variant C \n";
+    }
+};
+
+
 int main(int argc, char* argv[])
 {
     std::variant<int, std::string> x;
@@ -18,5 +41,8 @@ int main(int argc, char* argv[])
         std::cout << "Variant was not an int \n";
     }
 
+    // Dynamic polymorphism with variants
+    std::variant<vA, vB, vC> variant = vC();
+    std::visit([](auto&v){v.who();},variant);
     return 0;
 }
