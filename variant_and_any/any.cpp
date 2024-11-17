@@ -47,14 +47,14 @@ int main(int argc, char* argv[])
     try 
     {
         // cast down
-        auto conceptInt = (*(int*)v[0].object.get());
-        auto conceptString = (*(std::string*)v[1].object.get());
+        auto containerInt = (*(int*)v[0].object.get());
+        auto containerString = (*(std::string*)v[1].object.get());
 
         auto anyInt = std::any_cast<int>(vectorOfAny[0]);
         auto anyString = std::any_cast<std::string>(vectorOfAny[1]);
         // and compare
-        assert(conceptInt == anyInt);
-        assert(conceptString == anyString);
+        assert(containerInt == anyInt);
+        assert(containerString == anyString);
     }
     catch (const std::exception& e)
     {
